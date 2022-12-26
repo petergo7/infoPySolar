@@ -1,0 +1,2 @@
+Version a0.001 - Fixed QML file path
+Version a0.002 - Added Change Log
