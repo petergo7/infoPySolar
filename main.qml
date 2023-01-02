@@ -5,7 +5,7 @@ ApplicationWindow {
     visible: true
     width: 600
     height: 500
-    title: "InfoPySolar"
+    title: "PyInfoSolar"
     Text {
         anchors.centerIn: parent
         text: "Hello World"
