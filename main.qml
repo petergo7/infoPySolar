@@ -6,9 +6,18 @@ ApplicationWindow {
     width: 600
     height: 500
     title: "PyInfoSolar"
-    Text {
-        anchors.centerIn: parent
-        text: "Hello World"
-        font.pixelSize: 24
+    
+    Rectangle {
+        Image {
+            sourceSize.width: parent.width
+            sourceSize.height: parent.height
+            source: "./beach.jpg"
+        }
+
+        Text {
+            anchors.centerIn: parent
+            text: "Hello World"
+            font.pixelSize: 24
+        }
     }
 }
