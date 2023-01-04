@@ -24,7 +24,8 @@ ApplicationWindow {
     Text {
         anchors.centerIn: parent
         text: currTime
-        font.pixelSize: 24
+        font.pixelSize: 96
+        font.weight: Font.Bold
     }
 
     Connections {
