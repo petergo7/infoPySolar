@@ -19,14 +19,20 @@ ApplicationWindow {
             fillMode: Image.PreserveAspectCrop
             source: "./beach.jpg"
         }
+
+        Rectangle {
+            anchors.centerIn: parent
+
+            Text {
+                anchors.centerIn: parent
+                text: currTime
+                font.pixelSize: 96
+                font.weight: Font.Bold
+            }
+        }
     }
 
-    Text {
-        anchors.centerIn: parent
-        text: currTime
-        font.pixelSize: 96
-        font.weight: Font.Bold
-    }
+    
 
     Connections {
         target: backend
