@@ -27,14 +27,10 @@ ApplicationWindow {
                 text: currTime
                 font.pixelSize: 96
                 font.weight: Font.Bold
-            }
-
-            Switch {
-                checked: false
+                color: "#FFFFFF"
             }
         }
     }
-    
 
     Connections {
         target: backend
