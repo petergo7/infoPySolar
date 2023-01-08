@@ -17,21 +17,23 @@ ApplicationWindow {
             sourceSize.width: parent.width
             sourceSize.height: parent.height
             fillMode: Image.PreserveAspectCrop
-            source: "./beach.jpg"
+            source: "./beachDark.jpg"
         }
 
         Rectangle {
             anchors.centerIn: parent
-
             Text {
                 anchors.centerIn: parent
                 text: currTime
                 font.pixelSize: 96
                 font.weight: Font.Bold
             }
+
+            Switch {
+                checked: false
+            }
         }
     }
-
     
 
     Connections {
