@@ -7,6 +7,7 @@ ApplicationWindow {
     height: 500
     title: "PyInfoSolar"
     property string currTime: "00:00:00"
+    property int timerNACT: 0
     property QtObject backend
 
 
@@ -22,12 +23,19 @@ ApplicationWindow {
 
         Rectangle {
             anchors.centerIn: parent
-
+            /*
             Text {
                 anchors.centerIn: parent
                 text: currTime
                 font.pixelSize: 96
                 font.weight: Font.Bold
+                color: "#FFFFFF"
+            }
+            */
+            Text {
+                anchors.centerIn: parent
+                text: timerNACT
+                font.pixelSize: 24
                 color: "#FFFFFF"
             }
         }
@@ -38,6 +46,7 @@ ApplicationWindow {
 
         function onUpdated(msg) {
             currTime = msg;
+            timer = msg;
         }
     }
 }

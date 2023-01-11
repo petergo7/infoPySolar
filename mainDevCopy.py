@@ -22,17 +22,32 @@ class Backend(QObject):
         t_thread.daemon = True
         t_thread.start()
         
-    def _bootUp(self):      
+    def _bootUp(self):
+        setpointRequestHandle = 0 
+        timerNACT = 0
+        alarm_state = "False"
+        
         while True:
             curr_time = strftime("%H:%M:%S", localtime())
+            setpointRequestHandle += 1
+            
+            if setpointRequestHandle < 2:
+                timer_set = 100
+            
+            timerNACT = timer_set * 10
+            timerNACT -= 1
+            timer_set -= 10
+                
             engine.rootObjects()[0].setProperty('currTime', curr_time)
+            engine.rootObjects()[0].setProperty('timerNACT', timerNACT)
+            engine.rootObjects()[0].setProperty('alarm', alarm_state)
             sleep(0.1)
 
 QQuickWindow.setSceneGraphBackend('software')
 app = QGuiApplication(sys.argv)
 engine = QQmlApplicationEngine()
 engine.quit.connect(app.quit)
-engine.load('./main.qml')
+engine.load('./mainDevCopy.qml')
 back_end = Backend()
 engine.rootObjects()[0].setProperty('backend', back_end)
 back_end.bootUp()
